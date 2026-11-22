@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Acompanhamento Comercial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Comercial">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F5F7F6">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  html,body{margin:0;height:100%;background:#F5F7F6;overflow:hidden}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0}
+  .aviso{font-family:Arial,sans-serif;color:#6B7570;text-align:center;padding:40px 20px}
+</style>
+</head>
+<body>
+<!--
+  COLE AQUI O LINK DO SEU APP (o que termina em /exec), entre as aspas da linha abaixo.
+-->
+<script>
+  const LINK_DO_APP = "https://script.google.com/macros/s/AKfycbzcA2jJ4_X3eQulT0Z_VuJdwuS3M7619cWXvkGH1UwWh-QQ-VM3tlz5b-WWFrK5LOlGCQ/exec";
+  if (LINK_DO_APP.indexOf('/exec') < 0 || LINK_DO_APP.indexOf('COLE_AQUI') === 0) {
+    document.body.innerHTML = '<div class="aviso">Falta colar o link do app no arquivo index.html.</div>';
+  } else {
+    const f = document.createElement('iframe');
+    f.src = LINK_DO_APP;
+    f.title = 'Acompanhamento Comercial';
+    f.allow = 'clipboard-write';
+    document.body.appendChild(f);
+  }
+</script>
+</body>
+</html>
